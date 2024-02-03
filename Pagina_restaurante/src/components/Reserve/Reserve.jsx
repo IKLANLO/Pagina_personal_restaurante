@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './Reserve.styles.scss'
 
 const Reserve = () => {
   const [data, setData] = useState({
@@ -7,7 +8,6 @@ const Reserve = () => {
     email: '',
     reserveDate: ''
   })
-  // const [btnDisabled, setBtnDisabled] = useState(true)
   let navigate = useNavigate()
 
   const handleInputChange = (event) => {
@@ -23,15 +23,15 @@ const Reserve = () => {
     }))
     console.log({message: `data stored successfully: `}, {name: data.name,
      email: data.email, reserveDate: data.reserveDate})
-    // setTimeout(() => {navigate('/')}, 1000)
+    setTimeout(() => {navigate('/')}, 1000)
   }
 
   return (
     <>
       <form className='form' onSubmit={handleSubmit}>
-        <input placeholder='name' type='text' name='name' value={data.name} onChange={handleInputChange}/>
-        <input placeholder='email' type='email' name='email' value={data.email} onChange={handleInputChange}/>
-        <input placeholder='reserve date' type='date' name='reserveDate' value={data.reserveDate} onChange={handleInputChange}/>
+        <input className='form__input' placeholder='nombre' type='text' name='name' value={data.name} onChange={handleInputChange}/>
+        <input className='form__input' placeholder='email' type='email' name='email' value={data.email} onChange={handleInputChange}/>
+        <input className='form__input' type='date' name='reserveDate' value={data.reserveDate} onChange={handleInputChange}/>
         <button type='submit'>Submit</button>
       </form>
     </>

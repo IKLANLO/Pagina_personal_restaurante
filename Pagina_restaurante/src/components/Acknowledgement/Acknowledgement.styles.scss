@@ -1,0 +1,11 @@
+.acknowledgement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__div-submit {
+    display: flex;
+    justify-content:end;
+    margin-top: .3125rem;
+  }
+}
